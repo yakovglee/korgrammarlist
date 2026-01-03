@@ -18,24 +18,29 @@ function GrammarCard({ item }: GrammarCardProps) {
     <Card className="border-none shadow-[0_2px_12px_rgba(0,0,0,0.03)] rounded-[22px] overflow-hidden bg-white">
       <Accordion type="single" collapsible>
         <AccordionItem value={item.id} className="border-none px-5 py-4">
-            <div className="flex gap-1.5">
-          <Badge
-            className="text-[9px] font-black uppercase tracking-widest text-blue-500 mb-1"
-            variant="outline"
-          >
-            {item.pos}
-          </Badge>
-          <Badge
-            className="text-[9px] font-black uppercase tracking-widest text-blue-500 mb-1"
-            variant="outline"
-          >
-            {item.level}
-          </Badge>
+          <div className="flex gap-1.5">
+            <Badge
+              className="text-[9px] font-black uppercase tracking-widest text-blue-500 mb-1"
+              variant="outline"
+            >
+              {item.pos}
+            </Badge>
+            <Badge
+              className="text-[9px] font-black uppercase tracking-widest text-blue-500 mb-1"
+              variant="outline"
+            >
+              {item.level}
+            </Badge>
           </div>
           <AccordionTrigger className="hover:no-underline">
-            <span className="text-lg font-semibold text-[#1d1d1f] tracking-tight">
-              {item.main_category} {item.rel_category}
+            <div className="flex flex-col">
+            <span className="text-lg font-bold text-[#1d1d1f] tracking-tight">
+              {item.main_category}
             </span>
+            <span className="text-md font-semibold text-[#1d1d1fbc] tracking-tight">
+              {item.rel_category}
+            </span>
+            </div>
           </AccordionTrigger>
           <AccordionContent className="pb-5">
             <div className="space-y-4 border-t border-gray-50 pt-4">

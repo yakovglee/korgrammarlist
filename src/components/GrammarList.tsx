@@ -1,10 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { BookOpen, Sparkles, GraduationCap, Search, X, Layers } from 'lucide-react';
+import {  Search, Layers } from 'lucide-react';
 import { cn } from "@/lib/utils"; // Утилита для классов shadcn
 import { grammarData } from '@/utils/grammarData';
 import GrammarCard from './GrammarCard';
@@ -16,15 +13,15 @@ const GrammarList = () => {
 
   // Автоматически получаем список категорий из данных
   const categories = useMemo(() => {
-    return ["All", ...Array.from(new Set(grammarData.map(item => item.category)))];
+    return ["All", ...Array.from(new Set(grammarData.map(item => item.main_category)))];
   }, []);
 
   // Двойная фильтрация: по поиску и по категории
   const filteredData = useMemo(() => {
     return grammarData.filter(item => {
-      const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                            item.usage.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory = activeCategory === "All" || item.category === activeCategory;
+      const matchesSearch = item.id.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                            item.pos.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesCategory = activeCategory === "All" || item.main_category === activeCategory;
       return matchesSearch && matchesCategory;
     });
   }, [searchQuery, activeCategory]);

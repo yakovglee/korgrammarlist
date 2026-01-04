@@ -11,7 +11,6 @@ const GrammarList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
-  // Автоматически получаем список категорий из данных
   const categories = useMemo(() => {
     return [
       "All",
@@ -19,12 +18,13 @@ const GrammarList = () => {
     ];
   }, []);
 
-  // Двойная фильтрация: по поиску и по категории
   const filteredData = useMemo(() => {
     return grammarData.filter((item) => {
       const matchesSearch =
-        item.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.pos.toLowerCase().includes(searchQuery.toLowerCase());
+        item.level.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.pos.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.main_category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.rel_category.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory =
         activeCategory === "All" || item.level === activeCategory;
       return matchesSearch && matchesCategory;
@@ -41,7 +41,7 @@ const GrammarList = () => {
               <h1 className="text-3xl font-bold text-[#1d1d1f] tracking-tight">
                 Грамматика
               </h1>
-              <p className="text-sm text-[#86868b]">Подготовка к экзамену</p>
+              <p className="text-sm text-[#86868b]">한국어능력시험</p>
             </div>
             <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-sm">
               <Layers size={18} className="text-blue-500" />
@@ -55,7 +55,7 @@ const GrammarList = () => {
               size={18}
             />
             <Input
-              placeholder="Поиск правил..."
+              placeholder="Поиск грамматики..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 h-11 bg-gray-200/50 border-none rounded-xl focus-visible:ring-2 focus-visible:ring-blue-500/20"

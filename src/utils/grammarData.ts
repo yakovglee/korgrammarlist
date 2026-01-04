@@ -18,8 +18,8 @@ export const grammarData: GrammarType[] = [
     main_category: "과",
     rel_category: "와",
     other: "",
-    meaning: "",
-    example: ""
+    example: "비교의 대상이거나 기준으로 삼는 대상임을 나타내는 조사., 지난 학기 성적과 비교했을 때 이번 학기 평균이 이십 점이나 올랐어.",
+    meaning: "젊은이들의 생각은 어른 세대의 생각과 많이 다르다."
   },
   {
     id: "3",

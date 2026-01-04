@@ -34,12 +34,12 @@ function GrammarCard({ item }: GrammarCardProps) {
           </div>
           <AccordionTrigger className="hover:no-underline">
             <div className="flex flex-col">
-            <span className="text-lg font-bold text-[#1d1d1f] tracking-tight">
-              {item.main_category}
-            </span>
-            <span className="text-md font-semibold text-[#1d1d1fbc] tracking-tight">
-              {item.rel_category}
-            </span>
+              <span className="text-lg font-bold text-[#1d1d1f] tracking-tight">
+                {item.main_category}
+              </span>
+              <span className="text-md font-semibold text-[#1d1d1fbc] tracking-tight">
+                {item.rel_category}
+              </span>
             </div>
           </AccordionTrigger>
           <AccordionContent className="pb-5">
@@ -65,7 +65,7 @@ function GrammarCard({ item }: GrammarCardProps) {
                     </span>
                   </div>
                   <p className="text-sm italic text-[#1d1d1f]">
-                    "{item.example}"
+                    {item.example}
                   </p>
                 </div>
               </div>

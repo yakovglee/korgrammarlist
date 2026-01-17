@@ -17,7 +17,7 @@ function ContentMax({ item }: ContentMaxProps) {
             </span>
           </div>
           <code className="text-sm font-mono font-semibold text-blue-700">
-            {item.id}
+            {item.usage}
           </code>
         </div>
 

@@ -6,5 +6,6 @@ export type GrammarType = {
     meaning: string,
     pos: string,
     example: string,
-    other?: string
+    other?: string,
+    usage?: string
 }

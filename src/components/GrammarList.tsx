@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Search, Layers } from "lucide-react";
 import { cn } from "@/lib/utils"; // Утилита для классов shadcn
 import { grammarData } from "@/utils/grammarData";
-import GrammarCard from "./GrammarCard";
+import GrammarCard from "./GramarCard/GrammarCard";
 import { Button } from "./ui/button";
 
 const GrammarList = () => {

@@ -8,7 +8,7 @@ export const grammarData: GrammarType[] = [
     main_category: "이",
     rel_category: "가",
     other: "",
-    meaning: "",
+    meaning: "어떤 동작을 하는 주체 또는 어떤 상태에 있는 대상을 나타내는 조사. (명사에 붙어) 어떤 동작을 하는 주체 또는 어떤 상태에 있는 대상을 나타낸다. 문장의 주어임을 나타낼 때 사용한다.",
     example: ""
   },
   {
